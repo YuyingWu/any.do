@@ -6,11 +6,11 @@ export class Layout extends React.Component {
     render() {
         return (
             <section>
-                <Nav />
-
                 <div className="main">
                     {this.props.children}
                 </div>
+
+                <Nav />
             </section>
         );
     }

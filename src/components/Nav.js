@@ -1,12 +1,14 @@
 import React from "react";
 import {Link} from "react-router";
 
+import styles from "../assets/styles/components/nav.less";
+
 export const Nav = (props) => {
     return (
-        <nav>
+        <nav className="wgt-nav">
             <ul>
-                <li><Link to={"/home"}>Home</Link></li>
-                <li><Link to={"/setting"}>Setting</Link></li>
+                <li><Link to={"/home"} activeClassName={"active"}>Home</Link></li>
+                <li><Link to={"/setting"} activeClassName={"active"}>Setting</Link></li>
             </ul>
         </nav>
     );

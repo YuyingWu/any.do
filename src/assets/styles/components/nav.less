@@ -1,0 +1,28 @@
+@import url(../variable.less);
+@navHeight: 5em;
+.wgt-nav{
+    width: 100%;
+    box-shadow: 0px -10px 5px -10px @disable-color;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 1.4em;
+    background: #fff;
+    ul{
+        display: flex;
+    }
+    li{
+        flex: 1 1 50%;
+        a{
+            display: block;
+            height: @navHeight;
+            line-height: @navHeight;
+            color: @disable-color;
+            &.active{
+                color: @active-color;
+            }
+        }
+        text-align: center;
+        align-items: center;
+    }
+}

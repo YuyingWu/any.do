@@ -1,0 +1,36 @@
+@import url(normalize.css);
+@import url(variable.less);
+/**
+ * layout
+ */
+.grid{
+	float: left;
+}
+.grid-r{
+	float: right;
+}
+.clearfix:after{
+	content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+/**
+ * custom style
+ */
+body{
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 62.5%;
+    // color: @disable-color;
+    // a{
+    // 	color: @font-color;
+    // 	text-decoration: none;
+    //     outline: 0;
+    // }
+}
+ul{
+	margin: 0;
+	padding: 0;
+}

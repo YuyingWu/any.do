@@ -6,6 +6,8 @@ import { Layout } from "../components/Layout";
 import { Home } from "../components/Home";
 import { Setting } from "../components/Setting";
 
+import styles from "../assets/styles/base.less";
+
 class App extends React.Component {
     render() {
         return (

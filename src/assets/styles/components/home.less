@@ -1,0 +1,61 @@
+@import url(../variable.less);
+@cubeSize: 50%;
+@headerHeight: 7.5em;
+.section-home{
+    color: @active-color;
+    h1{
+        font-size: 2.1em;
+    }
+    p{
+        font-size: 1.4em;
+        margin: 1.8em;
+    }
+    header{
+        height: @headerHeight;
+        padding: 0 1.5em 0 3.2em;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        width: 100%;
+    }
+    .wgt-list-covers{
+        display: flex;
+        flex-flow: row wrap;
+        margin: @headerHeight 0;
+    }
+    .list-cover{
+        flex: 1 0 @cubeSize;
+        list-style: none;
+        border-bottom: 1px solid @disable-color;
+        border-right: 1px solid @disable-color;
+        max-width: @cubeSize;
+        height: 0;
+        padding-bottom: @cubeSize;
+        &.last-single,
+        &.btn-add-list{
+            border-bottom: 0;
+        }
+        &:nth-child(2n){
+            flex-basis: calc(50% - 1px);
+            border-right: 0;
+        }
+    }
+    @btn-add-size: 50px;
+    .btn-add-list{
+        margin: 0;
+        position: relative;
+        div{
+            width: @btn-add-size;
+            height: @btn-add-size;
+            line-height: @btn-add-size;
+            font-size: @btn-add-size;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -@btn-add-size/2 0 0 -@btn-add-size/2;
+            text-align: center;
+            font-weight: 200;
+        }
+    }
+}
