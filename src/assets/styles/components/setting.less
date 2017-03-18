@@ -1,0 +1,18 @@
+@import url(../variable.less);
+@headerHeight: 6em;
+.section-setting{
+    header{
+        width: 100%;
+        height: @headerHeight;
+        line-height: @headerHeight;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid @disable-color-lighter;
+        color: @active-color;
+    }
+    .main{
+        margin: @headerHeight 0 @navHeight 0;
+    }
+}

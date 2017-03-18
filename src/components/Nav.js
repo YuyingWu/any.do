@@ -7,7 +7,7 @@ export const Nav = (props) => {
     return (
         <nav className="wgt-nav">
             <ul>
-                <li><Link to={"/home"} activeClassName={"active"}>Home</Link></li>
+                <li><Link to={"/"} activeClassName={"active"}>Home</Link></li>
                 <li><Link to={"/setting"} activeClassName={"active"}>Setting</Link></li>
             </ul>
         </nav>

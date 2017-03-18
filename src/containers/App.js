@@ -4,6 +4,7 @@ import {Router, Route, hashHistory, IndexRoute} from "react-router";
 
 import { Layout } from "../components/Layout";
 import { Home } from "../components/Home";
+import { List } from "../components/List";
 import { Setting } from "../components/Setting";
 
 import styles from "../assets/styles/base.less";
@@ -14,7 +15,10 @@ class App extends React.Component {
             <Router history={hashHistory}>
                 <Route path={"/"} component={Layout}>
                     <IndexRoute component={Home} />
-                    <Route path={"setting"} component={Setting}/>
+                    <Route path={"list/:id"} component={List}/>
+                </Route>
+                <Route path={"/setting"} component={Layout}>
+                    <IndexRoute component={Setting} />
                 </Route>
                 <Route path={"*"} component={Layout}>
                     <IndexRoute component={Home} />

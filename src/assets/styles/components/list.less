@@ -1,0 +1,49 @@
+@import url(../variable.less);
+@headerHeight: 6em;
+@itemHeight: 5em;
+.section-list{
+    color: @active-color;
+    header{
+        width: 100%;
+        height: @headerHeight;
+        line-height: @headerHeight;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid @disable-color-lighter;
+    }
+    .main{
+        margin: @headerHeight 2em @navHeight 2em;
+    }
+    li{
+        list-style: none;
+        height: @itemHeight;
+        line-height: @itemHeight;
+        border-bottom: 1px solid @disable-color-lighter;
+        color: #000;
+    }
+    .done-list{
+        li{
+            position: relative;
+            color: @disable-color-lighter;
+        }
+        .line-through{
+            height: 0;
+            border-top: 1px solid @disable-color-lighter;
+            position: absolute;
+            width: 90%;
+            left: 0;
+            top: calc(@itemHeight/2);
+        }
+        p{
+            display: flex;
+        }
+        .title{
+            flex: 95;
+        }
+        .btn-x{
+            flex: 5;
+        }
+    }
+}
