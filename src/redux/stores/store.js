@@ -3,13 +3,14 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
-// import math from "./reducers/mathReducer";
-// import user from "./reducers/userReducer";
+// reducers
+import list from "../reducers/listReducer";
+import item from "../reducers/itemReducer";
 
 export default createStore(
     combineReducers({
-        // math,
-        // user
+        list,
+        item
     }),
     {},
     applyMiddleware(logger(), thunk, promise())

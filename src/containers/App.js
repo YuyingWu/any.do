@@ -1,13 +1,12 @@
+import styles from "../assets/styles/base.less";
+
 import React from "react";
-import {connect} from "react-redux";
 import {Router, Route, hashHistory, IndexRoute} from "react-router";
 
 import { Layout } from "../components/Layout";
-import { Home } from "../components/Home";
-import { List } from "../components/List";
+import Home from "./Home";
+import List from "./List";
 import { Setting } from "../components/Setting";
-
-import styles from "../assets/styles/base.less";
 
 class App extends React.Component {
     render() {
@@ -28,19 +27,4 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-  return {
-      // user: state.user,
-      // math: state.math
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        // setName: (name) => {
-        //     dispatch(setName(name));
-        // }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
