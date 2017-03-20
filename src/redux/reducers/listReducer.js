@@ -1,13 +1,17 @@
-import { list } from "../../data/list";
-
 const listReducer = (state = {
-    data: list
+    data: []
 }, action) => {
     switch (action.type) {
-        case "ADD_LIST":
+        case "ADD_LIST_FULFILLED":
             state = {
                 ...state,
                 data: [...state.data, action.payload]
+            };
+            break;
+        case "INIT_LIST_FULFILLED":
+            state = {
+                ...state,
+                data: [...state.data, ...action.payload]
             };
             break;
     }
