@@ -1,4 +1,5 @@
 const listReducer = (state = {
+    listHasInit: false,
     data: []
 }, action) => {
     switch (action.type) {
@@ -11,6 +12,7 @@ const listReducer = (state = {
         case "INIT_LIST_FULFILLED":
             state = {
                 ...state,
+                listHasInit: true,
                 data: [...state.data, ...action.payload]
             };
             break;

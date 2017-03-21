@@ -5,9 +5,15 @@ import {connect} from "react-redux";
 import { list } from "../data/list";
 import { details } from "../data/details";
 
-import { addItem, doneItem, removeItem } from "../redux/actions/itemActions";
+import { addItem, doneItem, removeItem, initItems } from "../redux/actions/itemActions";
 
 class List extends React.Component {
+    componentDidMount() {
+        // 仅在第一次初始化数据
+        if(!this.props.itemHasInit){
+            this.props.initItems(this.props.params.id);
+        }
+    }
     render() {
         // test
         const listId = 1;
@@ -56,6 +62,7 @@ const mapStateToProps = (state) => {
     const data = state.item;
 
     return {
+        itemHasInit: data.itemHasInit,
         toDoData: data.toDoData,
         doneData: data.doneData
     };
@@ -77,6 +84,9 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(removeItem({
                 title: title
             }));
+        },
+        initItems: (id) => {
+            dispatch(initItems(id));
         }
     };
 };

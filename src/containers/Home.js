@@ -6,13 +6,11 @@ import {connect} from "react-redux";
 import { initList, addList } from "../redux/actions/listActions";
 
 class Home extends React.Component {
-    componentWillMount() {
-        // this.props.initList();
-        console.log('componentWillMount');
-    }
     componentDidMount() {
-        console.log('componentDidMount');
-        this.props.initList();
+        // 仅在第一次初始化数据
+        if(!this.props.listHasInit){
+            this.props.initList();
+        }
     }
     render() {
         const list = this.props.data;
@@ -27,7 +25,7 @@ class Home extends React.Component {
                 { list.map((item, index) =>
                     <li key={ item.id }
                         className={ index == list.length-1 && index % 2 != 1 ? 'list-cover last-single' : 'list-cover'}>
-                        <Link to={ "/list/" + item.id } activeClassName={"active"}>{ item.attributes.title }</Link>
+                        <Link to={ "/list/" + item.id } activeClassName={"active"}>{ item.title }</Link>
                     </li>
                 )}
                     <li key="add" className="list-cover btn-add-list"
@@ -44,7 +42,8 @@ const mapStateToProps = (state) => {
     const data = state.list;
 
     return {
-        data: data.data
+        data: data.data,
+        listHasInit: data.listHasInit
     };
 };
 
